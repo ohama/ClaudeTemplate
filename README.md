@@ -1,26 +1,28 @@
 # Claude Code Project Template
 
-Claude Code를 사용한 대형 프로젝트 개발을 위한 템플릿입니다.
+[![Korean](https://img.shields.io/badge/lang-한국어-blue.svg)](README.ko.md)
 
-## 특징
+A template for large-scale project development using Claude Code.
 
-- **TDD 기반 개발**: Red → Green → Refactor 사이클
-- **Phase > Step 워크플로우**: 체계적인 작업 분할 및 진행 관리
-- **지식 관리**: 발견 사항, 결정 사항, 패턴 등을 문서화
-- **커스텀 Commands**: 반복 작업 자동화
-- **Skills**: 언어/프레임워크별 전문가 지침
+## Features
+
+- **TDD-based Development**: Red → Green → Refactor cycle
+- **Phase > Step Workflow**: Systematic task division and progress management
+- **Knowledge Management**: Document discoveries, decisions, and patterns
+- **Custom Commands**: Automate repetitive tasks
+- **Skills**: Language/framework-specific expert guidelines
 
 ---
 
-## 시작하기
+## Getting Started
 
-### 1. 템플릿 복사
+### 1. Copy Template
 
 ```bash
 cp -r MyTemplate /path/to/your/project/.claude
 ```
 
-또는 새 프로젝트에서:
+Or for a new project:
 
 ```bash
 git clone <this-repo> my-project
@@ -29,13 +31,13 @@ rm -rf .git
 git init
 ```
 
-### 2. 프로젝트 설정
+### 2. Project Setup
 
-1. `.claude/PLAN.md` - 프로젝트 목표와 Phase/Step 계획 작성
-2. `.claude/knowledge/ARCHITECTURE.md` - 프로젝트 구조 정의
-3. `.claude/knowledge/BUILD.md` - 빌드 명령어 설정
+1. `.claude/PLAN.md` - Write project goals and Phase/Step plan
+2. `.claude/knowledge/ARCHITECTURE.md` - Define project structure
+3. `.claude/knowledge/BUILD.md` - Set build commands
 
-### 3. 작업 시작
+### 3. Start Working
 
 ```
 /startsession
@@ -43,148 +45,148 @@ git init
 
 ---
 
-## 디렉토리 구조
+## Directory Structure
 
 ```
 .claude/
-├── PLAN.md              # Phase > Step 구조의 프로젝트 계획
-├── STATE.md             # 현재 진행 상태
-├── CACHE.md             # 임시 발견 사항
-├── HISTORY.md           # 주요 결정/전환점 요약
-├── DECISIONS.md         # 기술적 결정 기록
-├── README.md            # .claude 디렉토리 가이드
-├── USAGE.md             # 커맨드 사용 시나리오
+├── PLAN.md              # Project plan with Phase > Step structure
+├── STATE.md             # Current progress state
+├── CACHE.md             # Temporary discoveries
+├── HISTORY.md           # Summary of key decisions/milestones
+├── DECISIONS.md         # Technical decision records
+├── README.md            # .claude directory guide
+├── USAGE.md             # Command usage scenarios
 │
-├── commands/            # 커스텀 커맨드
-│   ├── startsession.md  # 세션 시작
-│   ├── endsession.md    # 세션 종료
-│   ├── nextstep.md      # 새 Step 시작
-│   ├── endstep.md       # Step 완료
-│   ├── tdd.md           # TDD 사이클
-│   ├── phase.md         # Phase 관리
-│   ├── status.md        # 상태 확인
-│   ├── issue.md         # 이슈 관리
-│   ├── flush.md         # 캐시 정리
-│   ├── commit.md        # 스마트 커밋
-│   ├── release.md       # 릴리스
+├── commands/            # Custom commands
+│   ├── startsession.md  # Start session
+│   ├── endsession.md    # End session
+│   ├── nextstep.md      # Start new Step
+│   ├── endstep.md       # Complete Step
+│   ├── tdd.md           # TDD cycle
+│   ├── phase.md         # Phase management
+│   ├── status.md        # Status check
+│   ├── issue.md         # Issue management
+│   ├── flush.md         # Cache cleanup
+│   ├── commit.md        # Smart commit
+│   ├── release.md       # Release
 │   └── ...
 │
-├── skills/              # 언어/프레임워크 전문가
-│   └── fsharp.md        # F# 전문가 (ROP, Expecto, Serilog)
+├── skills/              # Language/framework experts
+│   └── fsharp.md        # F# expert (ROP, Expecto, Serilog)
 │
-├── knowledge/           # 프로젝트 지식
-│   ├── ARCHITECTURE.md  # 프로젝트 구조
-│   ├── BUILD.md         # 빌드 가이드
-│   ├── TESTING.md       # 테스트 가이드
-│   ├── TDD.md           # TDD 사이클
-│   ├── PATTERNS.md      # 코드 패턴
-│   └── RULES.md         # 개발 규칙
+├── knowledge/           # Project knowledge
+│   ├── ARCHITECTURE.md  # Project structure
+│   ├── BUILD.md         # Build guide
+│   ├── TESTING.md       # Testing guide
+│   ├── TDD.md           # TDD cycle
+│   ├── PATTERNS.md      # Code patterns
+│   └── RULES.md         # Development rules
 │
-└── prompts/             # 재사용 프롬프트
+└── prompts/             # Reusable prompts
     ├── prompt-logger.md
     └── history-summarizer.md
 
 docs/
-├── spec/                # 스펙 문서
-└── issues/              # 이슈 기록
+├── spec/                # Specification documents
+└── issues/              # Issue records
 ```
 
 ---
 
-## 워크플로우
+## Workflow
 
-### 기본 작업 흐름
+### Basic Work Flow
 
 ```
-/startsession → /nextstep → /tdd (반복) → /endstep → /endsession
+/startsession → /nextstep → /tdd (repeat) → /endstep → /endsession
 ```
 
-### Phase 전환
+### Phase Transition
 
 ```
 /phase status → /phase complete → /phase next
 ```
 
-### 작업 구조
+### Work Structure
 
 ```
-Phase 1: (Phase 이름)
-  └─ Step 1.1: (Step 이름)     ← 1~2시간 분량
-  └─ Step 1.2: (Step 이름)
-  └─ Step 1.3: (Step 이름)
-Phase 2: (Phase 이름)
-  └─ Step 2.1: (Step 이름)
+Phase 1: (Phase Name)
+  └─ Step 1.1: (Step Name)     ← 1-2 hour scope
+  └─ Step 1.2: (Step Name)
+  └─ Step 1.3: (Step Name)
+Phase 2: (Phase Name)
+  └─ Step 2.1: (Step Name)
 ```
 
 ---
 
-## 커맨드 목록
+## Command List
 
-### 세션 관리
+### Session Management
 
-| 커맨드 | 설명 |
-|--------|------|
-| `/startsession` | 작업 세션 시작, 컨텍스트 로드 |
-| `/endsession` | 세션 종료, 상태 저장 |
-| `/status` | 현재 상태 확인 |
+| Command | Description |
+|---------|-------------|
+| `/startsession` | Start work session, load context |
+| `/endsession` | End session, save state |
+| `/status` | Check current status |
 
-### Step 관리
+### Step Management
 
-| 커맨드 | 설명 |
-|--------|------|
-| `/nextstep` | 다음 Step 시작 |
-| `/nextstep "목표"` | 새 목표로 Step 생성 |
-| `/endstep` | 현재 Step 완료 |
-| `/tdd` | TDD 사이클 실행 |
+| Command | Description |
+|---------|-------------|
+| `/nextstep` | Start next Step |
+| `/nextstep "goal"` | Create Step with new goal |
+| `/endstep` | Complete current Step |
+| `/tdd` | Execute TDD cycle |
 
-### Phase 관리
+### Phase Management
 
-| 커맨드 | 설명 |
-|--------|------|
-| `/phase status` | Phase 진행 상태 |
-| `/phase complete` | 현재 Phase 완료 |
-| `/phase next` | 다음 Phase 시작 |
+| Command | Description |
+|---------|-------------|
+| `/phase status` | Phase progress status |
+| `/phase complete` | Complete current Phase |
+| `/phase next` | Start next Phase |
 
-### 지식 관리
+### Knowledge Management
 
-| 커맨드 | 설명 |
-|--------|------|
-| `/flush` | CACHE → knowledge 파일로 정리 |
-| `/issue` | 이슈 기록 |
-| `/issue resolve <id>` | 이슈 해결 |
+| Command | Description |
+|---------|-------------|
+| `/flush` | Organize CACHE → knowledge files |
+| `/issue` | Record issue |
+| `/issue resolve <id>` | Resolve issue |
 
-### 릴리스
+### Release
 
-| 커맨드 | 설명 |
-|--------|------|
-| `/commit` | 스마트 커밋 (gitignore + 그룹 커밋) |
-| `/release` | 버전 업그레이드 + CHANGELOG |
-| `/howto` | 튜토리얼 문서 생성 |
+| Command | Description |
+|---------|-------------|
+| `/commit` | Smart commit (gitignore + grouped commits) |
+| `/release` | Version upgrade + CHANGELOG |
+| `/howto` | Generate tutorial documentation |
 
 ---
 
-## CACHE와 지식 관리
+## CACHE and Knowledge Management
 
-### CACHE란?
+### What is CACHE?
 
-`.claude/CACHE.md`는 작업 중 발견한 임시 정보를 저장하는 파일입니다.
+`.claude/CACHE.md` is a file for storing temporary information discovered during work.
 
-**누가 기록하나?**
-- **Claude가 자동으로** 작업 중 발견한 사항을 기록
-- **사용자 요청으로** "이거 CACHE에 기록해줘"라고 하면 기록
+**Who records it?**
+- **Claude automatically** records findings during work
+- **By user request** - "Record this in CACHE"
 
-**언제 기록하나?**
-- 코드 작업 중 새로운 패턴 발견 시
-- 빌드/테스트 실행 후 특이사항 발견 시
-- 프로젝트 규칙이나 제약 발견 시
-- 나중에 정리할 TODO 발견 시
+**When to record?**
+- When discovering new patterns during coding
+- When finding anomalies after build/test execution
+- When discovering project rules or constraints
+- When finding TODOs to organize later
 
-**용도**:
-- 작업 중 발견한 사항 (버그, 개선점, 특이사항)
-- 나중에 정리할 메모
-- TODO 항목
+**Purpose**:
+- Findings during work (bugs, improvements, anomalies)
+- Notes to organize later
+- TODO items
 
-**구조**:
+**Structure**:
 ```markdown
 # CACHE
 
@@ -192,80 +194,80 @@ Phase 2: (Phase 이름)
 
 ---
 
-## 발견 사항
-- 빌드 시 --release 플래그 필요
-- API 응답 시간이 느림
+## Discoveries
+- --release flag needed for build
+- API response time is slow
 
-## 메모
-- 리팩토링 아이디어
+## Notes
+- Refactoring ideas
 
-## TODO (나중에 처리)
-- 문서 업데이트
+## TODO (process later)
+- Update documentation
 ```
 
 **Status**:
-- `CLEAN`: 정리할 내용 없음
-- `DIRTY`: `/flush` 필요
+- `CLEAN`: Nothing to organize
+- `DIRTY`: `/flush` needed
 
-### /flush 커맨드
+### /flush Command
 
-CACHE에 쌓인 내용을 적절한 knowledge 파일로 분류하여 이동합니다.
+Categorizes and moves CACHE contents to appropriate knowledge files.
 
-**동작 방식**:
+**How it works**:
 
 ```
 CACHE.md (DIRTY)
     │
-    ├─ 빌드 관련 ──────→ knowledge/BUILD.md
-    ├─ 테스트 관련 ────→ knowledge/TESTING.md
-    ├─ TDD 관련 ───────→ knowledge/TDD.md
-    ├─ 코드 패턴 ──────→ knowledge/PATTERNS.md
-    └─ 규칙/제약 ──────→ knowledge/RULES.md
+    ├─ Build related ────→ knowledge/BUILD.md
+    ├─ Test related ─────→ knowledge/TESTING.md
+    ├─ TDD related ──────→ knowledge/TDD.md
+    ├─ Code patterns ────→ knowledge/PATTERNS.md
+    └─ Rules/constraints → knowledge/RULES.md
     │
     ▼
 CACHE.md (CLEAN)
 ```
 
-**사용 시점**:
-- 세션 종료 전 (`/endsession` 전에)
-- CACHE가 많이 쌓였을 때
-- Step 완료 후
+**When to use**:
+- Before ending session (before `/endsession`)
+- When CACHE has accumulated a lot
+- After completing a Step
 
-**예시**:
+**Example**:
 ```
 User: /flush
 
-Claude: CACHE 상태: DIRTY (5개 항목)
+Claude: CACHE status: DIRTY (5 items)
 
-분류 결과:
-- BUILD.md로 이동: 2개
-  - "dotnet build --configuration Release 필요"
-  - "환경변수 DOTNET_ROOT 설정 필요"
-- PATTERNS.md로 이동: 2개
-  - "Result 타입 체이닝 패턴"
-  - "비동기 에러 처리 패턴"
-- RULES.md로 이동: 1개
-  - "public API는 XML 주석 필수"
+Classification results:
+- Moved to BUILD.md: 2 items
+  - "dotnet build --configuration Release required"
+  - "DOTNET_ROOT environment variable setting required"
+- Moved to PATTERNS.md: 2 items
+  - "Result type chaining pattern"
+  - "Async error handling pattern"
+- Moved to RULES.md: 1 item
+  - "XML comments required for public API"
 
-CACHE 정리 완료. Status: CLEAN
+CACHE cleanup complete. Status: CLEAN
 ```
 
-### 왜 CACHE를 사용하는가?
+### Why use CACHE?
 
-1. **컨텍스트 유지**: 세션이 바뀌어도 발견 사항이 유실되지 않음
-2. **지식 축적**: 프로젝트별 노하우가 knowledge 파일에 쌓임
-3. **빠른 기록**: 작업 중단 없이 메모 가능
-4. **체계적 정리**: `/flush`로 적절한 위치에 자동 분류
+1. **Context Preservation**: Discoveries are not lost between sessions
+2. **Knowledge Accumulation**: Project know-how accumulates in knowledge files
+3. **Quick Recording**: Note-taking without interrupting work
+4. **Systematic Organization**: Auto-categorization with `/flush`
 
 ---
 
-## TDD 워크플로우
+## TDD Workflow
 
-### /tdd 커맨드
+### /tdd Command
 
-TDD (Test-Driven Development) 사이클을 실행합니다.
+Executes the TDD (Test-Driven Development) cycle.
 
-**사이클**:
+**Cycle**:
 
 ```
 ┌─────────────────────────────────────────────────────┐
@@ -275,21 +277,21 @@ TDD (Test-Driven Development) 사이클을 실행합니다.
 │   └─────────┘     └─────────┘     └──────────┘     │
 │        │                               │           │
 │        └───────────────────────────────┘           │
-│                    반복                             │
+│                    Repeat                          │
 └─────────────────────────────────────────────────────┘
 ```
 
-### 1. Red - 실패하는 테스트 작성
+### 1. Red - Write Failing Test
 
 ```
-목표: 테스트가 실패하는 것을 확인
+Goal: Confirm that the test fails
 
-- 구현하려는 기능에 대한 테스트를 먼저 작성
-- 테스트 실행하여 실패 확인
-- 실패 메시지가 예상대로인지 확인
+- Write test first for the feature to implement
+- Run test to confirm failure
+- Verify failure message is as expected
 ```
 
-**예시**:
+**Example**:
 ```fsharp
 [<Test>]
 let ``should validate email format`` () =
@@ -297,35 +299,35 @@ let ``should validate email format`` () =
     Expect.isError result "Invalid email should fail"
 ```
 
-### 2. Green - 최소한의 구현
+### 2. Green - Minimal Implementation
 
 ```
-목표: 테스트를 통과시키는 최소한의 코드 작성
+Goal: Write minimal code to pass the test
 
-- 완벽한 코드가 아니어도 됨
-- 하드코딩도 허용
-- 테스트 통과만 확인
+- Doesn't need to be perfect code
+- Hardcoding is allowed
+- Just confirm test passes
 ```
 
-**예시**:
+**Example**:
 ```fsharp
 let validateEmail email =
     if email.Contains("@") then Ok email
     else Error "Invalid email"
 ```
 
-### 3. Refactor - 리팩토링
+### 3. Refactor - Code Improvement
 
 ```
-목표: 코드 품질 개선 (테스트는 계속 통과)
+Goal: Improve code quality (tests keep passing)
 
-- 중복 제거
-- 명확한 이름
-- 구조 개선
-- 테스트 여전히 통과 확인
+- Remove duplication
+- Clear naming
+- Structure improvement
+- Verify tests still pass
 ```
 
-**예시**:
+**Example**:
 ```fsharp
 let private isValidEmailFormat email =
     let emailRegex = Regex(@"^[^@\s]+@[^@\s]+\.[^@\s]+$")
@@ -340,37 +342,37 @@ let validateEmail email =
         Ok email
 ```
 
-### TDD 규칙
+### TDD Rules
 
-| 규칙 | 설명 |
-|------|------|
-| 테스트 먼저 | 테스트 없이 프로덕션 코드 작성 금지 |
-| 하나씩 | 한 번에 하나의 테스트만 작성 |
-| 버그 재현 | 버그 수정 시 재현 테스트부터 작성 |
-| 리팩토링 집중 | 리팩토링 중에는 새 기능 추가 금지 |
+| Rule | Description |
+|------|-------------|
+| Test First | No production code without tests |
+| One at a Time | Write only one test at a time |
+| Bug Reproduction | Write reproduction test first when fixing bugs |
+| Focus on Refactoring | No new features during refactoring |
 
-### TDD 사용 예시
+### TDD Usage Example
 
 ```
 User: /tdd
 
-Claude: 현재 Step: 1.2 - 이메일 검증
+Claude: Current Step: 1.2 - Email Validation
 
-[Red] 테스트 작성:
-- tests/ValidationTests.fs에 이메일 검증 테스트 추가
-- 테스트 실행... 실패 ✓
+[Red] Writing test:
+- Added email validation test to tests/ValidationTests.fs
+- Running test... Failed ✓
 
-[Green] 최소 구현:
-- src/Validation.fs에 validateEmail 함수 추가
-- 테스트 실행... 통과 ✓
+[Green] Minimal implementation:
+- Added validateEmail function to src/Validation.fs
+- Running test... Passed ✓
 
-[Refactor] 코드 개선:
-- 정규식으로 검증 로직 개선
-- 에러 타입 세분화
-- 테스트 실행... 통과 ✓
+[Refactor] Code improvement:
+- Improved validation logic with regex
+- Refined error types
+- Running test... Passed ✓
 
-STATE.md 업데이트 완료.
-다음 테스트로 진행하시겠습니까?
+STATE.md updated.
+Proceed to next test?
 ```
 
 ---
@@ -379,80 +381,80 @@ STATE.md 업데이트 완료.
 
 ### F# Expert (`skills/fsharp.md`)
 
-F# 프로젝트에서 자동 활성화되는 전문가 지침:
+Expert guidelines automatically activated for F# projects:
 
-- **Railway Oriented Programming (ROP)**: 모든 에러 처리에 ROP 패턴 적용
-- **Expecto + FsCheck**: 테스트 프레임워크
-- **Serilog**: 구조화된 로깅
+- **Railway Oriented Programming (ROP)**: Apply ROP pattern to all error handling
+- **Expecto + FsCheck**: Testing framework
+- **Serilog**: Structured logging
 
-### 새 Skill 추가
+### Adding New Skills
 
-`.claude/skills/` 디렉토리에 마크다운 파일 생성:
+Create a markdown file in `.claude/skills/` directory:
 
 ```markdown
 # Skill Name
 
-## 활성화 조건
-- 파일 확장자: *.xx
-- 특정 조건
+## Activation Conditions
+- File extension: *.xx
+- Specific conditions
 
-## 핵심 원칙
+## Core Principles
 ...
 
-## 코드 스타일
+## Code Style
 ...
 ```
 
 ---
 
-## 커스터마이징
+## Customization
 
-### 새 Command 추가
+### Adding New Commands
 
-`.claude/commands/` 디렉토리에 마크다운 파일 생성:
+Create a markdown file in `.claude/commands/` directory:
 
 ```markdown
 # command-name
 
-설명
+Description
 
-## 사용법
+## Usage
 /command-name [args]
 
-## 절차
+## Procedure
 1. ...
 2. ...
 
-## 규칙
+## Rules
 - ...
 ```
 
-### Knowledge 파일 수정
+### Modifying Knowledge Files
 
-`.claude/knowledge/` 파일들을 프로젝트에 맞게 수정:
+Modify `.claude/knowledge/` files to fit your project:
 
-- `ARCHITECTURE.md`: 프로젝트 구조
-- `BUILD.md`: 빌드 명령어
-- `TESTING.md`: 테스트 전략
-- `PATTERNS.md`: 프로젝트 코드 패턴
-- `RULES.md`: 팀 규칙
-
----
-
-## 팁
-
-1. **세션 시작/종료 필수**: 컨텍스트 유지를 위해 `/startsession`으로 시작, `/endsession`으로 종료
-
-2. **Step 크기**: 1~2시간 내 완료 가능한 범위
-
-3. **자주 flush**: CACHE가 쌓이면 `/flush`로 knowledge 파일에 정리
-
-4. **이슈 즉시 기록**: 발견 즉시 `/issue`, 해결 즉시 `/issue resolve`
-
-5. **커밋 전 `/commit`**: 자동으로 gitignore 관리 및 연관 파일 그룹 커밋
+- `ARCHITECTURE.md`: Project structure
+- `BUILD.md`: Build commands
+- `TESTING.md`: Testing strategy
+- `PATTERNS.md`: Project code patterns
+- `RULES.md`: Team rules
 
 ---
 
-## 라이선스
+## Tips
+
+1. **Always Start/End Sessions**: Use `/startsession` to start and `/endsession` to end for context preservation
+
+2. **Step Size**: Scope completable within 1-2 hours
+
+3. **Flush Often**: Use `/flush` to organize accumulated CACHE into knowledge files
+
+4. **Record Issues Immediately**: `/issue` when discovered, `/issue resolve` when resolved
+
+5. **Use `/commit` Before Committing**: Automatic gitignore management and grouped file commits
+
+---
+
+## License
 
 MIT License
