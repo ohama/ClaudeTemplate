@@ -8,8 +8,8 @@ Phase 완료 또는 전환을 처리합니다.
 /phase complete          # 현재 Phase 완료
 /phase next              # 다음 Phase 시작
 /phase status            # Phase 상태 확인
-/phase run               # 현재 Phase의 모든 Step 자동 실행 (확인 모드)
-/phase run --auto        # 확인 없이 전체 자동 실행
+/phase run               # 현재 Phase의 모든 Step 자동 실행
+/phase run --confirm     # 각 Step 완료 후 확인 받고 진행
 ```
 
 ## 절차
@@ -53,24 +53,24 @@ Phase 완료 또는 전환을 처리합니다.
    - STATE.md: Current Phase 변경
    - 다음 Step 준비
 
-### /phase run [--auto]
+### /phase run [--confirm]
 
 현재 Phase의 모든 Step을 순차적으로 실행합니다.
 
-**기본 모드 (확인 모드)**:
+**기본 모드 (자동)**:
 ```
 /phase run
+```
+- 확인 없이 모든 Step 연속 실행
+- 에러 발생 시만 중단
+
+**확인 모드**:
+```
+/phase run --confirm
 ```
 - 각 Step 완료 후 사용자 확인
 - 다음 Step 진행 여부 질문
 - 중단 가능
-
-**자동 모드**:
-```
-/phase run --auto
-```
-- 확인 없이 모든 Step 연속 실행
-- 에러 발생 시만 중단
 
 **절차**:
 
@@ -85,7 +85,7 @@ Phase 완료 또는 전환을 처리합니다.
        (TDD 사이클 또는 작업 수행)
        /endstep (Step 완료)
 
-       if not --auto:
+       if --confirm:
            사용자에게 "다음 Step 진행?" 질문
            No 선택 시 중단
    ```

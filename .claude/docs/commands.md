@@ -24,8 +24,8 @@
 | `/phase status` | Phase 진행 상태 | - |
 | `/phase complete` | 현재 Phase 완료 | - |
 | `/phase next` | 다음 Phase 시작 | - |
-| `/phase run` | Phase 전체 자동 실행 (확인 모드) | - |
-| `/phase run --auto` | Phase 전체 자동 실행 (무확인) | - |
+| `/phase run` | Phase 전체 자동 실행 | - |
+| `/phase run --confirm` | Phase 실행 (각 Step 후 확인) | - |
 
 ### 개발
 
