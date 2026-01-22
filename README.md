@@ -71,20 +71,18 @@ git init
 │   ├── release.md       # Release
 │   └── ...
 │
-├── skills/              # Language/framework experts
-│   └── fsharp.md        # F# expert (ROP, Expecto, Serilog)
+├── skills/              # Language/framework/methodology experts
+│   ├── fsharp.md        # F# expert (ROP, Expecto, Serilog)
+│   ├── tdd.md           # TDD methodology
+│   └── claude-behavior/ # Claude meta-skills
+│       └── history.md   # History summarization
 │
-├── knowledge/           # Project knowledge
-│   ├── ARCHITECTURE.md  # Project structure
-│   ├── BUILD.md         # Build guide
-│   ├── TESTING.md       # Testing guide
-│   ├── TDD.md           # TDD cycle
-│   ├── PATTERNS.md      # Code patterns
-│   └── RULES.md         # Development rules
-│
-└── prompts/             # Reusable prompts
-    ├── prompt-logger.md
-    └── history-summarizer.md
+└── knowledge/           # Project knowledge
+    ├── ARCHITECTURE.md  # Project structure
+    ├── BUILD.md         # Build guide
+    ├── TESTING.md       # Testing guide
+    ├── PATTERNS.md      # Code patterns
+    └── RULES.md         # Development rules
 
 docs/
 ├── spec/                # Specification documents

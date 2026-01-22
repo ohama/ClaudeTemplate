@@ -69,20 +69,18 @@ git init
 │   ├── release.md       # 릴리스
 │   └── ...
 │
-├── skills/              # 언어/프레임워크 전문가
-│   └── fsharp.md        # F# 전문가 (ROP, Expecto, Serilog)
+├── skills/              # 언어/프레임워크/방법론 전문가
+│   ├── fsharp.md        # F# 전문가 (ROP, Expecto, Serilog)
+│   ├── tdd.md           # TDD 방법론
+│   └── claude-behavior/ # Claude 메타 스킬
+│       └── history.md   # 히스토리 요약
 │
-├── knowledge/           # 프로젝트 지식
-│   ├── ARCHITECTURE.md  # 프로젝트 구조
-│   ├── BUILD.md         # 빌드 가이드
-│   ├── TESTING.md       # 테스트 가이드
-│   ├── TDD.md           # TDD 사이클
-│   ├── PATTERNS.md      # 코드 패턴
-│   └── RULES.md         # 개발 규칙
-│
-└── prompts/             # 재사용 프롬프트
-    ├── prompt-logger.md
-    └── history-summarizer.md
+└── knowledge/           # 프로젝트 지식
+    ├── ARCHITECTURE.md  # 프로젝트 구조
+    ├── BUILD.md         # 빌드 가이드
+    ├── TESTING.md       # 테스트 가이드
+    ├── PATTERNS.md      # 코드 패턴
+    └── RULES.md         # 개발 규칙
 
 docs/
 ├── spec/                # 스펙 문서
