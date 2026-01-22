@@ -2,7 +2,43 @@
 
 Major decisions, changes, issues only.
 
-## YYYY-MM-DD
-- Decision:
-- Change:
-- Issue:
+## 2026-01-22
+
+### Skills 시스템 구축
+- **Decision**: knowledge와 prompts의 일부 내용을 skills로 이동
+  - `knowledge/TDD.md` → `skills/tdd.md`
+  - `prompts/history-summarizer.md` → `skills/claude-behavior/history.md`
+  - `prompts/prompt-logger.md` 삭제 (logprompts command와 중복)
+
+- **Change**: 6개 새 skill 추가
+  - `git.md` - Conventional Commits, AFTER 원칙
+  - `property-testing.md` - Property-based testing
+  - `debugging.md` - 7단계 디버깅 프레임워크
+  - `logging.md` - 구조화 로깅, OpenTelemetry
+  - `code-review.md` - 8대 체크리스트
+  - `cicd.md` - 파이프라인, 배포 전략
+
+### Commands-Skills 연결
+- **Change**: Commands에서 관련 Skills 참조 추가
+  - `commit.md` → `skills/git.md` (perf, ci 타입 추가)
+  - `tdd.md` → `skills/tdd.md` (내용 간소화)
+  - `historyupdate.md` → `skills/claude-behavior/history.md`
+  - `startsession.md` → 다수 skills 참조
+
+### Issue 시스템 개선
+- **Decision**: Status 필드 대신 디렉토리 분리 방식 채택
+  - `docs/issues/open/` - 미해결 이슈
+  - `docs/issues/resolved/` - 해결된 이슈
+
+- **Change**: `/issue build` 명령어 추가
+  - 빌드/테스트 에러 전용 템플릿
+  - 해결 여부에 따라 자동 분류
+
+- **Change**: 빌드 에러 자동 이슈 기록
+  - `skills/claude-behavior/build-issues.md` 추가
+  - TDD Red phase는 제외 (의도된 실패)
+
+### README 개선
+- **Change**: Quick Start 섹션을 최상단에 배치
+  - 템플릿 사용자 관점의 설정 가이드
+  - .git 삭제, README 삭제, CLAUDE.md 수정 절차
