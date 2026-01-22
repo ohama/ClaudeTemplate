@@ -176,7 +176,7 @@ docs/
 ### Phase 전환
 
 ```
-/phase status → /phase complete → /phase next
+/phase run (또는 /phase all 로 전체 프로젝트 실행)
 ```
 
 ### 작업 구조
@@ -218,6 +218,8 @@ Phase 2: (Phase 이름)
 | `/phase status` | Phase 진행 상태 |
 | `/phase complete` | 현재 Phase 완료 |
 | `/phase next` | 다음 Phase 시작 |
+| `/phase run` | 현재 Phase 자동 실행 |
+| `/phase all` | 모든 Phase 자동 실행 |
 
 ### 지식 관리
 

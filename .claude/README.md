@@ -37,7 +37,9 @@
 ### Phase 전환
 
 ```
-/phase status → /phase complete → /phase next
+/phase run                     # 현재 Phase 자동 실행
+/phase all                     # 전체 프로젝트 자동 실행
+/phase status/complete/next    # 수동 관리
 ```
 
 ---
