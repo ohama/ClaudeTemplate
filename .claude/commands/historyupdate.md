@@ -2,6 +2,10 @@
 
 HISTORY.md에 주요 이벤트를 기록합니다.
 
+## 참조
+
+- `.claude/skills/claude-behavior/history.md` - 히스토리 기록 상세 가이드
+
 ## 절차
 
 ### 1. 현재 세션 분석

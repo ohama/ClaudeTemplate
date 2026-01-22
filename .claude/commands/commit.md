@@ -2,6 +2,10 @@
 
 변경된 파일들을 분석하여 필요없는 파일을 .gitignore에 추가하고, 연관성 있는 내용들끼리 묶어서 commit합니다.
 
+## 참조
+
+- `.claude/skills/git.md` - Conventional Commits 상세 가이드
+
 ## 사용자 입력
 
 $ARGUMENTS - 커밋 메시지 접두사 (선택사항)
@@ -55,8 +59,10 @@ git diff --stat
 | docs | 문서 변경 (*.md, 주석) |
 | style | 코드 스타일 (포맷팅, 세미콜론 등) |
 | refactor | 리팩토링 (기능 변경 없는 코드 개선) |
+| perf | 성능 개선 |
 | test | 테스트 관련 (*.test.*, *.spec.*) |
 | chore | 빌드, 설정 변경 (package.json, config 등) |
+| ci | CI/CD 설정 변경 (.github/workflows 등) |
 
 분류 방법:
 1. 파일 경로와 확장자로 1차 분류

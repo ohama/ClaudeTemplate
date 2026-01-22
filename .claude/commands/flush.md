@@ -16,9 +16,9 @@ CACHE의 내용을 knowledge 파일로 정리합니다.
 |-----------|-----------|
 | 빌드 관련 | .claude/knowledge/BUILD.md |
 | 테스트 관련 | .claude/knowledge/TESTING.md |
-| TDD 관련 | .claude/knowledge/TDD.md |
 | 코드 패턴 | .claude/knowledge/PATTERNS.md |
 | 규칙/제약 | .claude/knowledge/RULES.md |
+| 아키텍처 | .claude/knowledge/ARCHITECTURE.md |
 
 ### 3. knowledge 파일 업데이트
 - 해당 파일에 내용 추가
