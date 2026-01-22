@@ -38,6 +38,7 @@
 |--------|------|-------------|
 | `/flush` | CACHE → knowledge 정리 | - |
 | `/issue` | 이슈 기록 | - |
+| `/issue build` | 빌드 이슈 기록 (해결 여부에 따라 분류) | - |
 | `/issue resolve <id>` | 이슈 해결 | - |
 | `/historyupdate` | HISTORY.md 업데이트 | claude-behavior/history |
 | `/logprompts` | 세션 로그 저장 | - |
