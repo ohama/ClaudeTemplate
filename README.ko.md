@@ -1,6 +1,48 @@
 # Claude Code Project Template
 
+[![English](https://img.shields.io/badge/lang-English-blue.svg)](README.md)
+
 Claude Code를 사용한 대형 프로젝트 개발을 위한 템플릿입니다.
+
+---
+
+## ⚡ 빠른 시작 (중요)
+
+이 템플릿을 클론한 후, 아래 명령어를 **반드시** 실행하여 자신의 프로젝트를 설정하세요:
+
+```bash
+# 1. 템플릿 클론
+git clone https://github.com/ohama/ClaudeTemplate my-project
+cd my-project
+
+# 2. 템플릿의 git 히스토리 삭제
+rm -rf .git
+
+# 3. 템플릿 README 파일들 삭제
+rm README.md README.ko.md
+
+# 4. 자신의 git 저장소 초기화
+git init
+
+# 5. 자신의 README.md 생성
+echo "# My Project" > README.md
+
+# 6. CLAUDE.md 업데이트
+#    CLAUDE.md를 편집하여 자신의 프로젝트 컨텍스트를 작성
+
+# 7. 초기 커밋
+git add .
+git commit -m "chore: initial project setup from ClaudeTemplate"
+```
+
+### 설정 후 작업
+
+1. `.claude/PLAN.md` 편집 - 프로젝트 목표와 Phase/Step 계획 작성
+2. `.claude/knowledge/ARCHITECTURE.md` 편집 - 프로젝트 구조 정의
+3. `.claude/knowledge/BUILD.md` 편집 - 빌드 명령어 설정
+4. `/startsession`으로 작업 시작
+
+---
 
 ## 특징
 
@@ -9,37 +51,6 @@ Claude Code를 사용한 대형 프로젝트 개발을 위한 템플릿입니다
 - **지식 관리**: 발견 사항, 결정 사항, 패턴 등을 문서화
 - **커스텀 Commands**: 반복 작업 자동화
 - **Skills**: 언어/프레임워크별 전문가 지침
-
----
-
-## 시작하기
-
-### 1. 템플릿 복사
-
-```bash
-cp -r MyTemplate /path/to/your/project/.claude
-```
-
-또는 새 프로젝트에서:
-
-```bash
-git clone <this-repo> my-project
-cd my-project
-rm -rf .git
-git init
-```
-
-### 2. 프로젝트 설정
-
-1. `.claude/PLAN.md` - 프로젝트 목표와 Phase/Step 계획 작성
-2. `.claude/knowledge/ARCHITECTURE.md` - 프로젝트 구조 정의
-3. `.claude/knowledge/BUILD.md` - 빌드 명령어 설정
-
-### 3. 작업 시작
-
-```
-/startsession
-```
 
 ---
 

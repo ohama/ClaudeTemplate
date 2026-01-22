@@ -4,6 +4,46 @@
 
 A template for large-scale project development using Claude Code.
 
+---
+
+## ⚡ Quick Start (IMPORTANT)
+
+After cloning this template, you **MUST** run these commands to set up your own project:
+
+```bash
+# 1. Clone the template
+git clone https://github.com/ohama/ClaudeTemplate my-project
+cd my-project
+
+# 2. Remove template's git history
+rm -rf .git
+
+# 3. Remove template README files
+rm README.md README.ko.md
+
+# 4. Initialize your own git repository
+git init
+
+# 5. Create your own README.md
+echo "# My Project" > README.md
+
+# 6. Update CLAUDE.md for your project
+#    Edit CLAUDE.md to describe YOUR project's context
+
+# 7. Initial commit
+git add .
+git commit -m "chore: initial project setup from ClaudeTemplate"
+```
+
+### After Setup
+
+1. Edit `.claude/PLAN.md` - Write your project goals and Phase/Step plan
+2. Edit `.claude/knowledge/ARCHITECTURE.md` - Define your project structure
+3. Edit `.claude/knowledge/BUILD.md` - Set your build commands
+4. Start working with `/startsession`
+
+---
+
 ## Features
 
 - **TDD-based Development**: Red → Green → Refactor cycle
@@ -11,37 +51,6 @@ A template for large-scale project development using Claude Code.
 - **Knowledge Management**: Document discoveries, decisions, and patterns
 - **Custom Commands**: Automate repetitive tasks
 - **Skills**: Language/framework-specific expert guidelines
-
----
-
-## Getting Started
-
-### 1. Copy Template
-
-```bash
-cp -r MyTemplate /path/to/your/project/.claude
-```
-
-Or for a new project:
-
-```bash
-git clone <this-repo> my-project
-cd my-project
-rm -rf .git
-git init
-```
-
-### 2. Project Setup
-
-1. `.claude/PLAN.md` - Write project goals and Phase/Step plan
-2. `.claude/knowledge/ARCHITECTURE.md` - Define project structure
-3. `.claude/knowledge/BUILD.md` - Set build commands
-
-### 3. Start Working
-
-```
-/startsession
-```
 
 ---
 
