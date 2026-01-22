@@ -218,6 +218,7 @@ Phase 2: (Phase 이름)
 | `/phase status` | Phase 진행 상태 |
 | `/phase complete` | 현재 Phase 완료 |
 | `/phase next` | 다음 Phase 시작 |
+| `/nextphase` | 다음 Phase 자동 실행 |
 | `/phase run` | 모든 Phase 자동 실행 |
 
 ### 지식 관리
