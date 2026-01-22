@@ -36,6 +36,7 @@ Claude가 특정 기술 스택으로 작업할 때 해당 skill이 자동으로 
 | Skill | 파일 | 활성화 조건 |
 |-------|------|-------------|
 | History | `claude-behavior/history.md` | `/historyupdate`, `/endsession` 시 |
+| Build Issues | `claude-behavior/build-issues.md` | 빌드/테스트 에러 발생 시 (자동) |
 
 ---
 
@@ -59,7 +60,8 @@ skills/
 │
 └── 메타
     └── claude-behavior/
-        └── history.md     # 히스토리 관리
+        ├── history.md       # 히스토리 관리
+        └── build-issues.md  # 빌드 에러 자동 기록
 ```
 
 ---

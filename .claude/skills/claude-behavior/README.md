@@ -7,10 +7,12 @@ Claude의 내부 동작 방식을 정의하는 메타 스킬입니다.
 | 파일 | 설명 |
 |------|------|
 | `history.md` | HISTORY.md 요약 및 기록 방식 |
+| `build-issues.md` | 빌드/테스트 에러 자동 이슈 기록 |
 
 ## 활성화 조건
 
 - `/endsession`, `/historyupdate` 실행 시 → `history.md`
+- 빌드/테스트 에러 발생 시 → `build-issues.md`
 
 ## 용도
 

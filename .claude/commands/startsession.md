@@ -19,3 +19,4 @@ Read the following files to understand current project state:
 - .claude/skills/tdd.md
 - .claude/skills/git.md
 - .claude/skills/debugging.md (문제 해결 시)
+- .claude/skills/claude-behavior/build-issues.md (빌드 에러 자동 기록)
