@@ -8,7 +8,17 @@ A template for large-scale project development using Claude Code.
 
 ## ⚡ Quick Start (IMPORTANT)
 
-After cloning this template, you **MUST** reset template-specific files for your own project:
+After cloning this template, you **MUST** reset template-specific files for your own project.
+
+### Option A: Use init script (Recommended)
+
+```bash
+git clone https://github.com/ohama/ClaudeTemplate my-project
+cd my-project
+./scripts/init.sh "My Project Name"
+```
+
+### Option B: Manual setup
 
 ```bash
 # 1. Clone the template

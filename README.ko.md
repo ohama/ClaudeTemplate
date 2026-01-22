@@ -8,7 +8,17 @@ Claude Code를 사용한 대형 프로젝트 개발을 위한 템플릿입니다
 
 ## ⚡ 빠른 시작 (중요)
 
-이 템플릿을 클론한 후, 템플릿 전용 파일들을 **반드시** 초기화하세요:
+이 템플릿을 클론한 후, 템플릿 전용 파일들을 **반드시** 초기화하세요.
+
+### 방법 A: 초기화 스크립트 사용 (권장)
+
+```bash
+git clone https://github.com/ohama/ClaudeTemplate my-project
+cd my-project
+./scripts/init.sh "My Project Name"
+```
+
+### 방법 B: 수동 설정
 
 ```bash
 # 1. 템플릿 클론
