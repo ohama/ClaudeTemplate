@@ -5,25 +5,42 @@
 ## 사용법
 
 ```
-/issue                    # 새 이슈 기록
-/issue resolve <번호>     # 이슈 해결 기록
+/issue                    # 새 이슈 기록 (open/ 에 생성)
+/issue resolve <번호>     # 이슈 해결 (resolved/ 로 이동)
+/issue list               # 이슈 목록 확인
+```
+
+## 디렉토리 구조
+
+```
+docs/issues/
+├── README.md        # 이슈 가이드
+├── open/            # 미해결 이슈
+│   └── 0001-xxx.md
+└── resolved/        # 해결된 이슈
+    └── 0002-yyy.md
 ```
 
 ## 절차
 
-### 새 이슈 기록
+### 새 이슈 기록 (`/issue`)
 
-1. `docs/issues/` 디렉토리 확인 (없으면 생성)
-2. 다음 이슈 번호 확인 (기존 파일들에서)
-3. `docs/issues/NNNN-<slug>.md` 파일 생성
-4. 템플릿에 맞춰 내용 작성
+1. `docs/issues/open/` 과 `docs/issues/resolved/` 에서 다음 번호 확인
+2. `docs/issues/open/NNNN-<slug>.md` 파일 생성
+3. 템플릿에 맞춰 내용 작성
 
-### 이슈 해결 기록
+### 이슈 해결 (`/issue resolve <번호>`)
 
-1. 해당 이슈 파일 열기
-2. Status를 `Resolved`로 변경
+1. `docs/issues/open/` 에서 해당 이슈 파일 찾기
+2. 파일 내 Status를 `Resolved`로 변경
 3. Resolution 섹션 작성
 4. Resolved 날짜 추가
+5. 파일을 `docs/issues/resolved/` 로 이동
+
+### 이슈 목록 (`/issue list`)
+
+1. `docs/issues/open/` 의 파일 목록 출력 (Open)
+2. `docs/issues/resolved/` 의 파일 목록 출력 (Resolved)
 
 ## 파일 형식
 
@@ -48,7 +65,7 @@
 
 ## Resolution
 
-(어떻게 해결했는가)
+(어떻게 해결했는가 - 해결 시 작성)
 
 ## 관련 파일
 
@@ -70,3 +87,4 @@
 - 이슈 발견 즉시 기록
 - 해결 후 반드시 Resolution 작성
 - 원인 분석 포함 (재발 방지)
+- 해결 시 `resolved/` 디렉토리로 이동
