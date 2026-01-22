@@ -8,7 +8,7 @@ A template for large-scale project development using Claude Code.
 
 ## ⚡ Quick Start (IMPORTANT)
 
-After cloning this template, you **MUST** run these commands to set up your own project:
+After cloning this template, you **MUST** reset template-specific files for your own project:
 
 ```bash
 # 1. Clone the template
@@ -18,29 +18,84 @@ cd my-project
 # 2. Remove template's git history
 rm -rf .git
 
-# 3. Remove template README files
-rm README.md README.ko.md
+# 3. Remove template files
+rm README.md README.ko.md CHANGELOG.md
+rm -rf .claude/logs/
 
-# 4. Initialize your own git repository
+# 4. Reset version
+echo "0.1.0" > VERSION
+
+# 5. Reset state files (clear template history)
+cat > .claude/HISTORY.md << 'EOF'
+# HISTORY
+
+Major decisions, changes, issues only.
+
+## YYYY-MM-DD
+- Decision:
+- Change:
+- Issue:
+EOF
+
+cat > .claude/STATE.md << 'EOF'
+# STATE
+
+## Current Phase
+(none)
+
+## Current Step
+(none)
+
+## Completed Steps
+- (none)
+
+## In Progress
+- (none)
+
+## Next Step
+(none)
+
+## Blockers
+- (none)
+
+## Evidence
+```
+(last command/test result)
+```
+
+---
+
+## Meta
+- Cache: CLEAN
+- Last Updated: (auto)
+EOF
+
+# 6. Initialize your own git repository
 git init
 
-# 5. Create your own README.md
+# 7. Create your own README.md
 echo "# My Project" > README.md
 
-# 6. Update CLAUDE.md for your project
-#    Edit CLAUDE.md to describe YOUR project's context
-
-# 7. Initial commit
+# 8. Initial commit
 git add .
 git commit -m "chore: initial project setup from ClaudeTemplate"
 ```
 
-### After Setup
+### After Setup - Edit These Files
 
-1. Edit `.claude/PLAN.md` - Write your project goals and Phase/Step plan
-2. Edit `.claude/knowledge/ARCHITECTURE.md` - Define your project structure
-3. Edit `.claude/knowledge/BUILD.md` - Set your build commands
-4. Start working with `/startsession`
+| File | Purpose |
+|------|---------|
+| `CLAUDE.md` | Your project's context for Claude |
+| `.claude/PLAN.md` | Project goals and Phase/Step plan |
+| `.claude/knowledge/ARCHITECTURE.md` | Project structure |
+| `.claude/knowledge/BUILD.md` | Build commands |
+| `.claude/knowledge/TESTING.md` | Test commands |
+
+### Start Working
+
+```
+/startsession
+```
 
 ---
 

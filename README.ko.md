@@ -8,7 +8,7 @@ Claude Code를 사용한 대형 프로젝트 개발을 위한 템플릿입니다
 
 ## ⚡ 빠른 시작 (중요)
 
-이 템플릿을 클론한 후, 아래 명령어를 **반드시** 실행하여 자신의 프로젝트를 설정하세요:
+이 템플릿을 클론한 후, 템플릿 전용 파일들을 **반드시** 초기화하세요:
 
 ```bash
 # 1. 템플릿 클론
@@ -18,29 +18,84 @@ cd my-project
 # 2. 템플릿의 git 히스토리 삭제
 rm -rf .git
 
-# 3. 템플릿 README 파일들 삭제
-rm README.md README.ko.md
+# 3. 템플릿 파일들 삭제
+rm README.md README.ko.md CHANGELOG.md
+rm -rf .claude/logs/
 
-# 4. 자신의 git 저장소 초기화
+# 4. 버전 초기화
+echo "0.1.0" > VERSION
+
+# 5. 상태 파일 초기화 (템플릿 히스토리 삭제)
+cat > .claude/HISTORY.md << 'EOF'
+# HISTORY
+
+Major decisions, changes, issues only.
+
+## YYYY-MM-DD
+- Decision:
+- Change:
+- Issue:
+EOF
+
+cat > .claude/STATE.md << 'EOF'
+# STATE
+
+## Current Phase
+(none)
+
+## Current Step
+(none)
+
+## Completed Steps
+- (none)
+
+## In Progress
+- (none)
+
+## Next Step
+(none)
+
+## Blockers
+- (none)
+
+## Evidence
+```
+(last command/test result)
+```
+
+---
+
+## Meta
+- Cache: CLEAN
+- Last Updated: (auto)
+EOF
+
+# 6. 자신의 git 저장소 초기화
 git init
 
-# 5. 자신의 README.md 생성
+# 7. 자신의 README.md 생성
 echo "# My Project" > README.md
 
-# 6. CLAUDE.md 업데이트
-#    CLAUDE.md를 편집하여 자신의 프로젝트 컨텍스트를 작성
-
-# 7. 초기 커밋
+# 8. 초기 커밋
 git add .
 git commit -m "chore: initial project setup from ClaudeTemplate"
 ```
 
-### 설정 후 작업
+### 설정 후 편집할 파일
 
-1. `.claude/PLAN.md` 편집 - 프로젝트 목표와 Phase/Step 계획 작성
-2. `.claude/knowledge/ARCHITECTURE.md` 편집 - 프로젝트 구조 정의
-3. `.claude/knowledge/BUILD.md` 편집 - 빌드 명령어 설정
-4. `/startsession`으로 작업 시작
+| 파일 | 용도 |
+|------|------|
+| `CLAUDE.md` | 프로젝트 컨텍스트 |
+| `.claude/PLAN.md` | 프로젝트 목표와 Phase/Step 계획 |
+| `.claude/knowledge/ARCHITECTURE.md` | 프로젝트 구조 |
+| `.claude/knowledge/BUILD.md` | 빌드 명령어 |
+| `.claude/knowledge/TESTING.md` | 테스트 명령어 |
+
+### 작업 시작
+
+```
+/startsession
+```
 
 ---
 
