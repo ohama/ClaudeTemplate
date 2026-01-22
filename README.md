@@ -176,7 +176,7 @@ docs/
 ### Phase Transition
 
 ```
-/phase run (or /phase all for entire project)
+/phase run
 ```
 
 ### Work Structure
@@ -218,8 +218,7 @@ Phase 2: (Phase Name)
 | `/phase status` | Phase progress status |
 | `/phase complete` | Complete current Phase |
 | `/phase next` | Start next Phase |
-| `/phase run` | Auto-execute current Phase |
-| `/phase all` | Auto-execute all Phases |
+| `/phase run` | Auto-execute all Phases |
 
 ### Knowledge Management
 

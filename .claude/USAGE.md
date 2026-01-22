@@ -179,18 +179,11 @@ Phase의 모든 Step가 완료되면 다음 Phase로 전환합니다.
 /phase next
 ```
 
-### 4. Phase 자동 실행
+### 4. 전체 프로젝트 실행
 
 ```
-/phase run              # 현재 Phase의 모든 Step 자동 실행
+/phase run              # 모든 Phase 자동 실행
 /phase run --confirm    # 각 Step 후 확인
-```
-
-### 5. 전체 프로젝트 실행
-
-```
-/phase all              # 모든 Phase 자동 실행
-/phase all --confirm    # 각 Step 후 확인
 ```
 
 ---
@@ -223,8 +216,7 @@ Phase의 모든 Step가 완료되면 다음 Phase로 전환합니다.
 | Phase 상태 | `/phase status` |
 | Phase 완료 | `/phase complete` |
 | Phase 전환 | `/phase next` |
-| Phase 실행 | `/phase run` |
-| 전체 실행 | `/phase all` |
+| 전체 실행 | `/phase run` |
 | 현재 상태 | `/status` |
 | 이슈 기록 | `/issue` |
 | 지식 정리 | `/flush` |

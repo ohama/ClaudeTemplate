@@ -8,10 +8,8 @@ Phase 완료 또는 전환을 처리합니다.
 /phase complete          # 현재 Phase 완료
 /phase next              # 다음 Phase 시작
 /phase status            # Phase 상태 확인
-/phase run               # 현재 Phase의 모든 Step 자동 실행
+/phase run               # 모든 Phase 자동 실행
 /phase run --confirm     # 각 Step 완료 후 확인 받고 진행
-/phase all               # 모든 Phase 자동 실행
-/phase all --confirm     # 각 Step 완료 후 확인 받고 진행
 ```
 
 ## 절차
@@ -57,74 +55,18 @@ Phase 완료 또는 전환을 처리합니다.
 
 ### /phase run [--confirm]
 
-현재 Phase의 모든 Step을 순차적으로 실행합니다.
-
-**기본 모드 (자동)**:
-```
-/phase run
-```
-- 확인 없이 모든 Step 연속 실행
-- 에러 발생 시만 중단
-
-**확인 모드**:
-```
-/phase run --confirm
-```
-- 각 Step 완료 후 사용자 확인
-- 다음 Step 진행 여부 질문
-- 중단 가능
-
-**절차**:
-
-1. **Phase 정보 로드**
-   - PLAN.md에서 현재 Phase의 모든 Step 목록 파악
-   - 이미 완료된 Step은 건너뜀
-
-2. **Step 순차 실행**
-   ```
-   for each Step in Phase:
-       /nextstep (Step 시작)
-       (TDD 사이클 또는 작업 수행)
-       /endstep (Step 완료)
-
-       if --confirm:
-           사용자에게 "다음 Step 진행?" 질문
-           No 선택 시 중단
-   ```
-
-3. **Phase 완료 처리**
-   - 모든 Step 완료 시 자동으로 /phase complete 실행
-   - STATE.md, HISTORY.md 업데이트
-
-**진행 상황 표시**:
-```
-Phase 2: Features [2/4]
-├─ Step 2.1: User Auth ✅
-├─ Step 2.2: Dashboard ✅ (현재 완료)
-├─ Step 2.3: Reports ⏳ (다음)
-└─ Step 2.4: Settings ○
-
-다음 Step으로 진행할까요? (Y/n)
-```
-
-**중단 시 재개**:
-- 중단된 위치에서 다시 `/phase run` 실행 시 이어서 진행
-- 완료된 Step은 자동으로 건너뜀
-
-### /phase all [--confirm]
-
 PLAN.md의 모든 Phase를 순차적으로 실행합니다.
 
 **기본 모드 (자동)**:
 ```
-/phase all
+/phase run
 ```
 - 모든 Phase의 모든 Step을 연속 실행
 - 에러 발생 시만 중단
 
 **확인 모드**:
 ```
-/phase all --confirm
+/phase run --confirm
 ```
 - 각 Step 완료 후 사용자 확인
 - 중단 가능
@@ -138,9 +80,17 @@ PLAN.md의 모든 Phase를 순차적으로 실행합니다.
 2. **Phase 순차 실행**
    ```
    for each Phase in PLAN:
-       /phase run [--confirm]  (현재 Phase 실행)
-       /phase complete         (Phase 완료)
-       /phase next             (다음 Phase 시작)
+       for each Step in Phase:
+           /nextstep (Step 시작)
+           (TDD 사이클 또는 작업 수행)
+           /endstep (Step 완료)
+
+           if --confirm:
+               사용자에게 "다음 Step 진행?" 질문
+               No 선택 시 중단
+
+       /phase complete (Phase 완료)
+       /phase next (다음 Phase 시작)
    ```
 
 3. **프로젝트 완료 처리**
@@ -163,7 +113,8 @@ Phase 3: Integration [0/3] ○
 ```
 
 **중단 시 재개**:
-- `/phase all` 재실행 시 현재 위치에서 이어서 진행
+- `/phase run` 재실행 시 현재 위치에서 이어서 진행
+- 완료된 Phase/Step은 자동으로 건너뜀
 
 ### /phase status
 
