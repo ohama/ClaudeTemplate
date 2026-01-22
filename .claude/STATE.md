@@ -1,7 +1,7 @@
 # STATE
 
 ## Current Phase
-Template Enhancement - Skills & Issue System
+Template Enhancement - Phase Execution Commands
 
 ## Current Step
 (완료)
@@ -13,12 +13,16 @@ Template Enhancement - Skills & Issue System
 - /issue build 명령어 추가
 - 빌드 에러 자동 이슈 기록 기능 추가
 - README Quick Start 섹션 추가
+- /phase run 커맨드 (현재 Phase 자동 실행)
+- /phase all 커맨드 (모든 Phase 자동 실행)
+- /phase run → 모든 Phase 실행으로 변경, /phase all 제거
+- /nextphase 커맨드 추가 (다음 Phase만 실행)
 
 ## In Progress
 - (없음)
 
 ## Next Step
-- git push (10 commits pending)
+- (대기 중)
 
 ## Blockers
 - (없음)
@@ -27,15 +31,15 @@ Template Enhancement - Skills & Issue System
 ```
 $ git status
 On branch main
-Your branch is ahead of 'origin/main' by 10 commits.
+Your branch is up to date with 'origin/main'.
 nothing to commit, working tree clean
 
 $ git log --oneline -5
-d3eb550 fix: exclude TDD red phase from auto issue recording
-645b8a4 feat: add automatic build issue recording
-afc5333 feat: add /issue build command for build errors
-ce7896c docs: add Quick Start section for template users
-8eabccb docs: update README files with new structure
+1b91990 chore: release v0.2.3
+6637e5c feat: add /nextphase command for single phase execution
+da23961 refactor: simplify /phase run to execute all phases
+845b491 chore: release v0.2.2
+7588beb docs: update documentation with /phase run and /phase all commands
 ```
 
 ---

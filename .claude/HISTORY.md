@@ -42,3 +42,18 @@ Major decisions, changes, issues only.
 - **Change**: Quick Start 섹션을 최상단에 배치
   - 템플릿 사용자 관점의 설정 가이드
   - .git 삭제, README 삭제, CLAUDE.md 수정 절차
+
+### Phase 실행 커맨드
+- **Change**: `/phase run` - 모든 Phase 자동 실행
+  - 초기: 현재 Phase만 → 최종: 모든 Phase 실행
+  - `--confirm` 옵션으로 Step별 확인 가능
+  - `/phase all` 제거 (phase run으로 통합)
+
+- **Change**: `/nextphase` 커맨드 추가
+  - 다음 Phase만 실행 (세분화된 제어)
+  - `--confirm` 옵션 지원
+
+### 릴리스
+- v0.2.1: /phase run 커맨드 추가
+- v0.2.2: /phase all 커맨드 추가
+- v0.2.3: /phase run 단순화, /nextphase 추가
