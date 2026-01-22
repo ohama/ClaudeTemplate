@@ -10,6 +10,8 @@ Phase 완료 또는 전환을 처리합니다.
 /phase status            # Phase 상태 확인
 /phase run               # 현재 Phase의 모든 Step 자동 실행
 /phase run --confirm     # 각 Step 완료 후 확인 받고 진행
+/phase all               # 모든 Phase 자동 실행
+/phase all --confirm     # 각 Step 완료 후 확인 받고 진행
 ```
 
 ## 절차
@@ -108,6 +110,60 @@ Phase 2: Features [2/4]
 **중단 시 재개**:
 - 중단된 위치에서 다시 `/phase run` 실행 시 이어서 진행
 - 완료된 Step은 자동으로 건너뜀
+
+### /phase all [--confirm]
+
+PLAN.md의 모든 Phase를 순차적으로 실행합니다.
+
+**기본 모드 (자동)**:
+```
+/phase all
+```
+- 모든 Phase의 모든 Step을 연속 실행
+- 에러 발생 시만 중단
+
+**확인 모드**:
+```
+/phase all --confirm
+```
+- 각 Step 완료 후 사용자 확인
+- 중단 가능
+
+**절차**:
+
+1. **전체 Phase 목록 로드**
+   - PLAN.md에서 모든 Phase와 Step 파악
+   - 이미 완료된 Phase/Step은 건너뜀
+
+2. **Phase 순차 실행**
+   ```
+   for each Phase in PLAN:
+       /phase run [--confirm]  (현재 Phase 실행)
+       /phase complete         (Phase 완료)
+       /phase next             (다음 Phase 시작)
+   ```
+
+3. **프로젝트 완료 처리**
+   - 모든 Phase 완료 시 HISTORY.md에 프로젝트 완료 기록
+   - 최종 상태 출력
+
+**진행 상황 표시**:
+```
+=== Project Execution ===
+
+Phase 1: Core [3/3] ✅
+Phase 2: Features [2/4]
+├─ Step 2.1 ✅
+├─ Step 2.2 ✅ (현재 완료)
+├─ Step 2.3 ⏳
+└─ Step 2.4 ○
+Phase 3: Integration [0/3] ○
+
+전체 진행률: 5/10 Steps (50%)
+```
+
+**중단 시 재개**:
+- `/phase all` 재실행 시 현재 위치에서 이어서 진행
 
 ### /phase status
 
