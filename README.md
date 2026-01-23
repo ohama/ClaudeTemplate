@@ -10,12 +10,12 @@ A template for large-scale project development using Claude Code.
 
 After cloning this template, you **MUST** reset template-specific files for your own project.
 
-### Option A: Use init script (Recommended)
+### Option A: Use clean script (Recommended)
 
 ```bash
 git clone https://github.com/ohama/ClaudeTemplate my-project
 cd my-project
-./scripts/init.sh "My Project Name"
+./scripts/clean.sh "My Project Name"
 ```
 
 ### Option B: Manual setup
@@ -31,6 +31,7 @@ rm -rf .git
 # 3. Remove template files
 rm README.md README.ko.md CHANGELOG.md
 rm -rf .claude/logs/
+rm -rf .claude/youtube/
 
 # 4. Reset version
 echo "0.1.0" > VERSION
@@ -116,6 +117,41 @@ git commit -m "chore: initial project setup from ClaudeTemplate"
 - **Knowledge Management**: Document discoveries, decisions, and patterns
 - **Custom Commands**: Automate repetitive tasks
 - **Skills**: Language/framework-specific expert guidelines
+- **MCP Integration**: Context7, Sequential Thinking, Memory, GitHub
+
+---
+
+## MCP (Model Context Protocol)
+
+Pre-configured MCP servers for enhanced AI assistance.
+
+| Server | Description |
+|--------|-------------|
+| **Context7** | Up-to-date library documentation (add "use context7" to prompts) |
+| **Sequential Thinking** | Structured problem-solving for complex implementations |
+| **Memory** | Persistent knowledge graph for project context |
+| **GitHub** | GitHub API for PRs, issues, repos, and code |
+
+### Setup
+
+1. Copy `.mcp.json` to your project root
+2. For GitHub: Replace `<your-github-token>` with your Personal Access Token
+3. Restart Claude Code
+
+### Usage
+
+```
+# Get latest library docs
+Create a Next.js API route. use context7
+
+# Store project context
+Remember that this project uses TypeScript strict mode.
+
+# GitHub operations
+Show open issues in this repository
+```
+
+See `.claude/docs/mcp.md` for detailed documentation.
 
 ---
 

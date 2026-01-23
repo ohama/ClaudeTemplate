@@ -10,12 +10,12 @@ Claude Code를 사용한 대형 프로젝트 개발을 위한 템플릿입니다
 
 이 템플릿을 클론한 후, 템플릿 전용 파일들을 **반드시** 초기화하세요.
 
-### 방법 A: 초기화 스크립트 사용 (권장)
+### 방법 A: 클린 스크립트 사용 (권장)
 
 ```bash
 git clone https://github.com/ohama/ClaudeTemplate my-project
 cd my-project
-./scripts/init.sh "My Project Name"
+./scripts/clean.sh "My Project Name"
 ```
 
 ### 방법 B: 수동 설정
@@ -31,6 +31,7 @@ rm -rf .git
 # 3. 템플릿 파일들 삭제
 rm README.md README.ko.md CHANGELOG.md
 rm -rf .claude/logs/
+rm -rf .claude/youtube/
 
 # 4. 버전 초기화
 echo "0.1.0" > VERSION
@@ -116,6 +117,41 @@ git commit -m "chore: initial project setup from ClaudeTemplate"
 - **지식 관리**: 발견 사항, 결정 사항, 패턴 등을 문서화
 - **커스텀 Commands**: 반복 작업 자동화
 - **Skills**: 언어/프레임워크별 전문가 지침
+- **MCP 통합**: Context7, Sequential Thinking, Memory, GitHub
+
+---
+
+## MCP (Model Context Protocol)
+
+향상된 AI 지원을 위해 사전 구성된 MCP 서버들입니다.
+
+| 서버 | 설명 |
+|------|------|
+| **Context7** | 최신 라이브러리 문서 (프롬프트에 "use context7" 추가) |
+| **Sequential Thinking** | 복잡한 구현을 위한 구조화된 문제 해결 |
+| **Memory** | 프로젝트 컨텍스트를 위한 영구 지식 그래프 |
+| **GitHub** | PR, 이슈, 저장소, 코드를 위한 GitHub API |
+
+### 설정
+
+1. `.mcp.json`을 프로젝트 루트에 복사
+2. GitHub용: `<your-github-token>`을 Personal Access Token으로 교체
+3. Claude Code 재시작
+
+### 사용법
+
+```
+# 최신 라이브러리 문서 가져오기
+Next.js API 라우트 만들어줘. use context7
+
+# 프로젝트 컨텍스트 저장
+이 프로젝트가 TypeScript strict 모드를 사용한다고 기억해줘.
+
+# GitHub 작업
+이 저장소의 열린 이슈 보여줘
+```
+
+자세한 문서는 `.claude/docs/mcp.md`를 참조하세요.
 
 ---
 

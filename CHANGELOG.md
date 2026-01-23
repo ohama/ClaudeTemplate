@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.4] - 2026-01-23
+
+### Added
+- **MCP Integration**: Pre-configured MCP servers for enhanced AI assistance
+  - Context7: Up-to-date library documentation
+  - Sequential Thinking: Structured problem-solving
+  - Memory: Persistent knowledge graph
+  - GitHub: GitHub API for PRs, issues, repos
+- **MCP Documentation**: `.claude/docs/mcp.md` with detailed setup and usage guide
+- **YouTube Materials**: `.claude/youtube/` explanation documents for tutorial creation
+
 ## [0.2.3] - 2026-01-22
 
 ### Added
@@ -45,7 +56,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Automatic build issue recording**: `claude-behavior/build-issues.md` skill
   - Auto-record errors after resolution or when stuck
   - TDD Red phase excluded (intentional failures)
-- **`scripts/init.sh`**: Initialization script for new projects
+- **`scripts/clean.sh`**: Clean script for new projects
   - Resets VERSION to 0.1.0, clears HISTORY/STATE/CACHE, removes logs
 - **Quick Start section**: Template user setup guide in README files
 - **Commands-Skills documentation**: `.claude/docs/commands.md`, `.claude/docs/skills.md`
