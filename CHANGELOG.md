@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.5] - 2026-01-23
+
+### Added
+- **YouTube MCP Guide**: `.claude/youtube/05-mcp.md` comprehensive MCP tutorial (10-12 min)
+  - Context7, Sequential Thinking, Memory, GitHub usage guides
+  - Setup instructions and practical tips
+
+### Changed
+- **YouTube README**: Added 5th section for MCP, updated keywords
+- **YouTube Overview**: Added MCP references and .mcp.json to directory structure
+
 ## [0.2.4] - 2026-01-23
 
 ### Added
