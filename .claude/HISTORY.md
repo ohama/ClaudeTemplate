@@ -2,6 +2,35 @@
 
 Major decisions, changes, issues only.
 
+## 2026-01-23
+
+### MCP 통합
+- **Decision**: 4개 MCP 서버 사전 구성
+  - Context7: 최신 라이브러리 문서
+  - Sequential Thinking: 구조화된 문제 해결
+  - Memory: 영구 지식 그래프
+  - GitHub: GitHub API 통합
+
+- **Change**: MCP 문서 작성
+  - `.mcp.json` 설정 파일 추가
+  - `.claude/docs/mcp.md` 상세 가이드
+  - README에 MCP 섹션 추가
+
+### YouTube 설명 자료
+- **Change**: `.claude/youtube/` 디렉토리 생성
+  - 01-overview.md: 프로젝트 개요
+  - 02-commands.md: 커맨드 상세 설명
+  - 03-skills.md: Skills 시스템 설명
+  - 04-workflow.md: 워크플로우 가이드
+
+### 스크립트 이름 변경
+- **Change**: `scripts/init.sh` → `scripts/clean.sh`
+  - 목적을 더 명확히 표현하는 이름으로 변경
+  - `.claude/youtube/` 삭제 로직 추가
+
+### 릴리스
+- v0.2.4: MCP 통합, YouTube 자료 추가
+
 ## 2026-01-22
 
 ### Skills 시스템 구축
