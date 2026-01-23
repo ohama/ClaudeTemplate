@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# ClaudeTemplate Initialization Script
-# Usage: ./scripts/init.sh [project-name]
+# ClaudeTemplate Clean Script
+# Usage: ./scripts/clean.sh [project-name]
 
 set -e
 
@@ -40,6 +40,7 @@ rm -rf .git
 echo "[2/8] Removing template files..."
 rm -f README.md README.ko.md CHANGELOG.md
 rm -rf .claude/logs/
+rm -rf .claude/youtube/
 
 # 3. Reset version
 echo "[3/8] Resetting version..."
