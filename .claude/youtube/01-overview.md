@@ -18,6 +18,7 @@
 - 미리 정의된 **Commands** (슬래시 명령어)
 - 자동 적용되는 **Skills** (전문가 지침)
 - 체계적인 **문서 구조** (PLAN, STATE, HISTORY)
+- **MCP 통합** (Context7, Memory, GitHub)
 
 ---
 
@@ -64,6 +65,7 @@ knowledge/*.md (영구 저장)
 ## 3. 디렉토리 구조 (1.5분)
 
 ```
+.mcp.json              # MCP 서버 설정
 .claude/
 ├── README.md          # 가이드 문서
 ├── USAGE.md           # 사용법 시나리오
@@ -93,6 +95,9 @@ knowledge/*.md (영구 저장)
 │   ├── PATTERNS.md
 │   └── RULES.md
 │
+├── docs/              # 상세 문서
+│   └── mcp.md         # MCP 설정 가이드
+│
 └── logs/              # 세션 로그
     └── YYYY-MM-DD.md
 ```
@@ -101,6 +106,7 @@ knowledge/*.md (영구 저장)
 
 | 파일 | 역할 | 업데이트 시점 |
 |------|------|--------------|
+| `.mcp.json` | MCP 서버 설정 | 초기 설정, MCP 추가 시 |
 | `PLAN.md` | 전체 로드맵 | 프로젝트 시작, Phase 완료 |
 | `STATE.md` | 현재 위치 | 매 Step 시작/완료 |
 | `CACHE.md` | 임시 메모 | 작업 중 수시로 |
@@ -167,6 +173,7 @@ knowledge/*.md (영구 저장)
 - Commands 상세 설명
 - Skills 상세 설명
 - 실전 워크플로우 시연
+- MCP 통합 가이드
 
 ---
 

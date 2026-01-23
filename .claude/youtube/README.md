@@ -10,6 +10,7 @@
 | [02-commands.md](./02-commands.md) | 모든 Commands 상세 설명 | 15-20분 |
 | [03-skills.md](./03-skills.md) | 모든 Skills 상세 설명 | 15-20분 |
 | [04-workflow.md](./04-workflow.md) | 실제 워크플로우 시연 가이드 | 10-15분 |
+| [05-mcp.md](./05-mcp.md) | MCP 통합 가이드 | 10-12분 |
 
 ## 영상 구성 제안
 
@@ -36,6 +37,12 @@
 - Phase 전환 시연
 - 이슈 기록 및 해결
 
+### 5부: MCP 통합 (10-12분)
+- Context7: 최신 라이브러리 문서 활용
+- Sequential Thinking: 구조화된 문제 해결
+- Memory: 영구 기억 시스템
+- GitHub: GitHub API 통합
+
 ## 대상 시청자
 
 - Claude Code를 처음 사용하는 개발자
@@ -46,3 +53,4 @@
 
 - Claude Code, AI 코딩, TDD, 개발 워크플로우, 프로젝트 관리
 - Vibe Coding, AI Pair Programming, 자동화 개발
+- MCP, Model Context Protocol, Context7, GitHub 연동
